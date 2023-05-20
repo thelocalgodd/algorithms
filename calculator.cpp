@@ -3,7 +3,7 @@
 using namespace std;
 
 int value, option, optionsec, sum = 0, diff = 0, prod = 1, count, tempopt, lengthopt, timeopt;
-double kelvin, fahrenheit, length, temp, kilometres, centimetres, minutes, hours, time;
+double kelvin, fahrenheit, length, temp, kilometres, centimetres, minutes, hours, time_t;
 
 int main() {
     cout << "Calculator \n";
@@ -53,7 +53,7 @@ int main() {
     case 4:
     cout << "what conversion would you like to do?: /n";
     cout << "---------------------------------------";
-    cout << "temperature [1], length [2], time [3]";
+    cout << "temperature [1], length [2], time_t [3]";
     cin >> optionsec;
             switch (optionsec) {
             case 1:
@@ -89,14 +89,14 @@ int main() {
                 break;
 
             case 3:
-                //time conversion
-                cout << "enter time in seconds: "; cin >> time;
+                //time_t conversion
+                cout << "enter time_t in seconds: ", cin >> time_t;
                 cout << "what would you like to convert it to?";
                 cout << "minutes [1], hours [2]: ", cin >> timeopt;
                 if (timeopt == 1) {
-                    minutes = time / 60;
+                    minutes = (time_t / 60);
                 } else if (timeopt == 2) {
-                    hours = time / (60 * 60);
+                    hours = (time_t / (60 * 60));
                 } else {
                     cout << "error";
                 }
