@@ -2,8 +2,8 @@
 #include <cmath>
 using namespace std;
 
-int value, option, optionsec, sum = 0, diff = 0, prod = 1, count, tempopt, lengthopt, timeopt;
-double kelvin, fahrenheit, length, temp, kilometres, centimetres, minutes, hours, time;
+int value, option, optionsec, sum = 0, diff = 0, prod = 1, count, tempopt, lengthopt;
+double kelvin, fahrenheit, length, temp, kilometres, centimetres;
 
 void addition () {
     //addition function
@@ -38,9 +38,9 @@ void multiplication () {
 }
 
 void lengthconv () {
-    cout << "enter length in metres: "; cin >> length;
-    cout << "what would like to convert to? ";
-    cout << "convert metres to kilometres[1] or centimetres[2]"; cin >> lengthopt;
+    cout << "enter length in metres: \n"; cin >> length;
+    cout << "what would like to convert to? \n";
+    cout << "convert metres to kilometres[1] or centimetres[2]: "; cin >> lengthopt;
         if (lengthopt == 1) {
             kilometres = length * 1000;
             cout << "length in kilometres is " << kilometres << "kilometres";
@@ -52,22 +52,10 @@ void lengthconv () {
             }
 }
 
-void timeconv () {
-    cout << "enter time_t in seconds: ", cin >> time;
-    cout << "what would you like to convert it to?";
-    cout << "minutes [1], hours [2]: ", cin >> timeopt;
-        if (timeopt == 1) {
-            minutes = (time / 60);
-        } else if (timeopt == 2) {
-            hours = (time / (60 * 60));
-        } else {
-            cout << "error";
-            }
-}
 
 void tempconv () {
-    cout << "enter temperature in degrees celcius: ", cin >> temp;
-                cout << "convert degrees celcius to degrees kelvin [1] or fahrenheit [2]";
+    cout << "enter temperature in degrees celcius: \n", cin >> temp;
+                cout << "convert degrees celcius to degrees kelvin [1] or fahrenheit [2]\n";
                 cout << "what would you like to convert degrees celcius to?: ", cin >> tempopt;
                     if (tempopt == 1) {
                         kelvin = temp + 273;
@@ -81,19 +69,15 @@ void tempconv () {
 }
 
 void conversions () {
-        cout << "what conversion would you like to do?: /n";
-    cout << "---------------------------------------";
-    cout << "temperature [1], length [2], time_t [3]";
-    cin >> optionsec;
+        cout << "what conversion would you like to do?: \n";
+    cout << "---------------------------------------\n";
+    cout << "temperature [1], length [2]", cin >> optionsec;
         if(optionsec == 1) {
             //temperature conversion.
                 tempconv();
             } else if (optionsec == 2) {
                 //length conversion.
                 lengthconv();
-            } else if (optionsec == 3) {
-                //time conversion.
-                timeconv();
             } else {
                 cout << "error";
             }
@@ -105,9 +89,7 @@ int main() {
     cout << "-------------\n";
     cout << "What would you like to do?\n";
     cout << "----------------------------- \n";
-    cout << "addition [1], subtraction [2], multiplication [3], conversions [4]\n";
-    cout << "-----------------------------------------------------\n";
-    cin >> option;
+    cout << "addition [1], subtraction [2], multiplication [3], conversions [4]", cin >> option;
 
     switch (option) {
     //addition
