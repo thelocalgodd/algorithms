@@ -59,5 +59,6 @@ int main() {
     
     cout << "The date is: " << day << dayname << " " << monthname << " " << year;
 
+    system("pause");
     return 0;
 }
